@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lung + Allergy Health Associates</title>
+  <style>
+    /* --- Reset / base --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* --- Navigation / header --- */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-weight: bold;
+      color: #003366;
+    }
+
+    /* --- Hero section --- */
+    .hero {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+    .hero .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .hero .buttons a {
+      padding: 12px 30px;
+      background: #1a73e8;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .hero .buttons a.secondary {
+      background: #fff;
+      color: #003366;
+      border: 2px solid #003366;
+    }
+
+    /* --- About section --- */
+    #about {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    #about h2 {
+      font-size: 2rem;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+    #about .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    #about .content img {
+      flex: 1 1 300px;
+      border-radius: 8px;
+    }
+    #about .content .text {
+      flex: 1 1 300px;
+    }
+    #about .text p {
+      margin-bottom: 20px;
+    }
+    #about .text a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1a73e8;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* --- Services section --- */
+    #services {
+      background: #f9f9f9;
+      padding: 60px 20px;
+    }
+    #services .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #services h2 {
+      font-size: 2rem;
+      color: #003366;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    #services .service-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    #services .service-item {
+      background: #fff;
+      flex: 1 1 280px;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    #services .service-item h3 {
+      color: #003366;
+      margin-bottom: 15px;
+    }
+    #services .service-item p {
+      margin-bottom: 20px;
+    }
+    #services .service-item a {
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
+    /* --- Testimonials section --- */
+    #reviews {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    #reviews h2 {
+      font-size: 2rem;
+      color: #003366;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    #reviews .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    #reviews .testimonial {
+      background: #fff;
+      flex: 1 1 280px;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    #reviews .testimonial p {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    #reviews .testimonial span {
+      font-weight: bold;
+      color: #003366;
+    }
+    #reviews .review-buttons {
+      text-align: center;
+      margin-top: 40px;
+    }
+    #reviews .review-buttons a {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background: #1a73e8;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* --- Call to Action (CTA) section --- */
+    #cta {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    #cta h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    #cta a {
+      padding: 14px 30px;
+      background: #1a73e8;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 40px 20px;
+    }
+    footer .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    footer .footer-section {
+      flex: 1 1 250px;
+    }
+    footer .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer .footer-links ul li {
+      margin-bottom: 10px;
+    }
+    footer .footer-links ul li a {
+      color: #ccc;
+    }
+    footer .footer-links ul li a:hover {
+      color: #fff;
+    }
+    footer p, footer li {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    footer .social {
+      margin-top: 20px;
+    }
+
+    /* --- Responsive tweaks --- */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      #about .content {
+        flex-direction: column;
+        gap: 20px;
+      }
+      #services .service-items {
+        flex-direction: column;
+      }
+      #reviews .testimonials {
+        flex-direction: column;
+      }
+      footer .footer-container {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Hero section -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#"><img src="logo-placeholder.png" alt="Lung + Allergy Health Associates"></a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Welcome to Lung + Allergy Health Associates</h1>
+      <p>Advance accurate diagnostics to cutting edge therapies</p>
+      <div class="buttons">
+        <a href="#contact">Contact Us</a>
+        <a class="secondary" href="#book">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About section -->
+  <section id="about">
+    <h2>About — What is LAHA?</h2>
+    <div class="content">
+      <img src="about-image.jpg" alt="Doctor with young patient">
+      <div class="text">
+        <p>Founded over 30 years ago, we are dedicated to providing comprehensive care for pulmonary and allergy conditions. Our team blends diagnostics, innovations, and patient-first approach to ensure you receive the best in modern therapy.</p>
+        <p>With state-of-the-art equipment and experienced specialists, we treat a full range of respiratory and immune-related disorders. Our goal is to help you breathe easier and live better.</p>
+        <a href="#readmore">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-items">
+        <div class="service-item">
+          <h3>Pulmonary</h3>
+          <p>Comprehensive respiratory care including asthma, COPD, lung disease, and internal medicine collaboration.</p>
+          <a href="#pulmonary">Read More</a>
+        </div>
+        <div class="service-item">
+          <h3>Diagnostics</h3>
+          <p>Advanced diagnostics: lung-function testing, allergy screens, imaging, and personalised treatment pathways.</p>
+          <a href="#diagnostics">Read More</a>
+        </div>
+        <!-- Add more service-items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews / Testimonials section -->
+  <section id="reviews">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“The team at LAHA made me feel so comfortable and really explained everything; I finally understand my condition.”</p>
+        <span>– Jane Doe</span>
+      </div>
+      <div class="testimonial">
+        <p>“Exceptional care and quick turnaround on diagnostics. Highly recommended.”</p>
+        <span>– John Smith</span>
+      </div>
+      <div class="testimonial">
+        <p>“I had been struggling for years. Their holistic approach changed my breathing and my life.”</p>
+        <span>– Mary Johnson</span>
+      </div>
+    </div>
+    <div class="review-buttons">
+      <a href="#loadmore">Load More</a>
+      <a href="#viewall">View All Reviews</a>
+    </div>
+  </section>
+
+  <!-- Call to Action section -->
+  <section id="cta">
+    <h2>Book an appointment online for advanced care</h2>
+    <a href="#book">Book Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section footer-contact">
+        <h3>Contact</h3>
+        <p>123 Health Street</p>
+        <p>City, State ZIP</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-section footer-links">
+        <h3>Helpful Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#research">Research</a></li>
+        </ul>
+      </div>
+      <div class="footer-section footer-research">
+        <h3>Research</h3>
+        <p>Learn about our latest clinical trials and publications in respiratory and allergy care.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
